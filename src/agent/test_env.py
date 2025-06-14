@@ -1,4 +1,4 @@
-from platformer_env import PlatformerEnv
+from .platformer_env import PlatformerEnv
 
 env = PlatformerEnv(headless=True, feature_obs=True)
 obs = env.reset()

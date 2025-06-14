@@ -1,5 +1,5 @@
 import pygame
-from level_draw import Level
+from .level_draw import Level
 
 def Controls(event, player, states, lev, screen, lv):
     level_changed = False

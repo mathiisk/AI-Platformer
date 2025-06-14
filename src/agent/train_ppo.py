@@ -5,7 +5,7 @@ from stable_baselines3.common.vec_env import SubprocVecEnv, DummyVecEnv
 from stable_baselines3.common.callbacks import CheckpointCallback, EvalCallback
 
 # Import your environment
-from platformer_env import PlatformerEnv
+from .platformer_env import PlatformerEnv
 
 
 def make_env(headless=True, feature_obs=True, level_number=1, tile_size=64):

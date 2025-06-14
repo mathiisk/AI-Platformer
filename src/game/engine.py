@@ -4,10 +4,10 @@ import random
 import numpy as np
 import pygame
 
-from level_load import load_level
-from level_draw import Level
-from player import Player
-from tiles import Block, Goal, Spike
+from .level_load import load_level
+from .level_draw import Level
+from .player import Player
+from .tiles import Block, Goal, Spike
 
 class GameEngine:
     def __init__(self, headless=False, level_number=1, tile_size=64):
