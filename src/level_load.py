@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def get_level(number: int, tile_size: int) -> tuple[np.ndarray, int, int]:
+def load_level(number: int, tile_size: int) -> tuple[np.ndarray, int, int]:
     """
     A level in text file looks like (1 = walls, 2 = spikes, 9 = goal):
      11111111100000000

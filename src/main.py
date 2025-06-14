@@ -16,7 +16,7 @@ pygame.display.set_caption("Project Valk")
 # Set up the drawing window
 current_level_number = 1
 tile_size = 64
-lev, screen_width, screen_height = get_level(current_level_number, tile_size)
+lev, screen_width, screen_height = load_level(current_level_number, tile_size)
 screen = pygame.display.set_mode((screen_width/2, screen_height))
 time = pygame.time.Clock()
 
@@ -36,7 +36,7 @@ pause_menu = PauseMenu(screen)
 how_to_play_menu = HowToPlayMenu(screen)
 
 # Create a player instance
-player_start_pos = (128, 128)  # Starting position for the player
+player_start_pos = (128, 400)  # Starting position for the player
 player_size = 64
 player = Player(player_start_pos, player_size, screen_width, screen_height)
 
@@ -96,7 +96,7 @@ while running:
                         states["GAME_WON"] = False
                     elif states["GAME_WON"] and pause_menu.next_level_button.collidepoint(mouse_pos) and current_level_number <= 9:
                         current_level_number += 1
-                        lev, screen_width, screen_height = get_level(current_level_number, tile_size)
+                        lev, screen_width, screen_height = load_level(current_level_number, tile_size)
                         lv = Level(lev, screen)
                         player.reset_position()
                         states["PAUSED"] = False
@@ -118,7 +118,7 @@ while running:
             if selected_level is not None:
                 # Logic to load the selected level
                 current_level_number = selected_level
-                lev, screen_width, screen_height = get_level(current_level_number, tile_size)
+                lev, screen_width, screen_height = load_level(current_level_number, tile_size)
                 lv = Level(lev, screen)
                 player.reset_position()
                 states["LEVEL_SELECT"] = False
@@ -139,7 +139,7 @@ while running:
         screen.fill((43, 28, 89))
         if lv is not None:
             lv.run()
-            lv.wordshift_on(1)
+            lv.wordshift_on(0)
             player.move(pygame.key.get_pressed())
             player.collide_with_tiles_horizontal(lv.blocks)
             player.apply_gravity()
