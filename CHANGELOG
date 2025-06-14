@@ -1,0 +1,9 @@
+Added a level layout example plus creating the Python files - video guide: https://www.youtube.com/watch?v=AY9MnQ4x3zk 
+27/10 Added Player character placeholder. Added movement, gravity, collision. 
+      Added text rendering on screen to guide the player on current state of the game.
+      Added game controls such as press 'R' to restart game.
+08/11 Added goal posts. Able to place goal anywhere in the level. If player reaches goal - victory text is displayed.
+21/11 Replaced the lists with numpy arrays in the set.py. Rewrote level generation in level.py
+22/11-10/12 - Major overhauls to the game environment such as adding screen scroll, added actual level designs (1-10), many bug fixes
+            - Oficially dropped the AI part of the project
+26/12 and 27/12 Bug fixes. Added level selection. Added sound effects (might not use). Clean up the code and refractored to have clarity
