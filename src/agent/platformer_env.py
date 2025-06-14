@@ -1,6 +1,7 @@
 import gym
 import numpy as np
 from gym import spaces
+import pygame
 from game.engine import GameEngine
 
 class PlatformerEnv(gym.Env):
@@ -52,6 +53,7 @@ class PlatformerEnv(gym.Env):
             return frame
         elif mode == 'human':
             if hasattr(self.engine, 'screen'):
+                pygame.event.pump()
                 self.engine.render()
         else:
             raise ValueError(f"Unsupported render mode: {mode}")
