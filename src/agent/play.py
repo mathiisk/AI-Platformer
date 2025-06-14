@@ -2,7 +2,7 @@
 import time
 import pygame
 from stable_baselines3 import PPO
-from platformer_env import PlatformerEnv
+from .platformer_env import PlatformerEnv
 
 def main():
     obs_env = PlatformerEnv(headless=True, feature_obs=True)

@@ -1,13 +1,13 @@
 import pygame
 import sys
-from level_load import *
-from level_draw import Level
-from player import Player  
-from controls import Controls
-from menu_start import MainMenu
-from menu_pause import PauseMenu
-from menu_selectlevel import LevelSelectMenu
-from menu_howtoplay import HowToPlayMenu
+from .level_load import *
+from .level_draw import Level
+from .player import Player
+from .controls import Controls
+from .menu_start import MainMenu
+from .menu_pause import PauseMenu
+from .menu_selectlevel import LevelSelectMenu
+from .menu_howtoplay import HowToPlayMenu
 
 pygame.init()
 pygame.mixer.init()

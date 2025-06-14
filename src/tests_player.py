@@ -1,9 +1,9 @@
-from player import Player
+from game.player import Player
 import unittest
 import pygame
-from tiles import Block
-from tiles import Goal
-from tiles import Spike
+from game.tiles import Block
+from game.tiles import Goal
+from game.tiles import Spike
 
 """We initialise in order for the sound mixer to work with the player class"""
 pygame.init()
@@ -31,16 +31,16 @@ class TestPlayer(unittest.TestCase):
 		p.apply_gravity()
 		self.assertEqual(p.velocity.y,0)
 
-	def test_jump_off_ground(self):
-		"""Test wether the player can jump while off the ground"""
+        def test_jump_off_ground(self):
+                """Test whether the player can jump while off the ground"""
 		p=Player((0,500),10,500,550)
 		p.on_ground=False
 		p.is_active=True
 		p.jump()
 		self.assertEqual(p.velocity.y,0)
 
-	def test_jump_on_ground(self):
-		"""Test wether the player can jump while on the ground"""
+        def test_jump_on_ground(self):
+                """Test whether the player can jump while on the ground"""
 		p=Player((0,500),10,500,550)
 		p.on_ground=True
 		p.is_active=True
@@ -92,16 +92,16 @@ class TestPlayer(unittest.TestCase):
 		p.velocity.x=100
 		p.collide_with_tiles_horizontal(tile_group)
 		p.collide_with_tiles_vertical(tile_group)
-		self.assertEqual(0,p.velocity.x,p.velocity.y)
+                self.assertEqual((0,0), (p.velocity.x, p.velocity.y))
 
-	def test_colide_with_goal(self):
+        def test_collide_with_goal(self):
 		"""Simple test to check the proper work of the goal collision function"""
 		goal=Goal((10,10),1)
 		goal_group=[goal]
 		p=Player((10,10),1,500,550)
 		self.assertIs(True,p.collide_with_goal(goal_group))
 
-	def test_colide_with_spike(self):
+        def test_collide_with_spike(self):
 		"""Simple test to check the proper work of the spike collision function"""
 		spike=Spike((10,10),1)
 		spike_group=[spike]

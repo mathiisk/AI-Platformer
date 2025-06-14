@@ -1,6 +1,6 @@
 import pygame
 import numpy as np
-from tiles import *
+from .tiles import *
 
 class Level:
 	def __init__(self,tile_size,surface):
